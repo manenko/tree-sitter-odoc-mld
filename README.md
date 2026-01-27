@@ -70,22 +70,24 @@ Add the following to your `languages.toml`:
 
 ```toml
 [[language]]
-name = "odoc-mld"
-scope = "source.odoc_mld"
-file-types = ["mld"]
-roots = []
+name          = "odoc-mld"
+scope         = "source.odoc_mld"
+file-types    = ["mld"]
+roots         = []
 comment-token = ""
-indent = { tab-width = 2, unit = "  " }
+indent        = { tab-width = 2, unit = "  " }
 
 [[grammar]]
-name = "odoc_mld"
-source = { git = "https://gitlab.com/manenko/tree-sitter-odoc-mld", rev = "main" }
+name          = "odoc_mld"
+source        = { git = "https://gitlab.com/manenko/tree-sitter-odoc-mld", rev = "development" }
 ```
 
-Then copy the query files:
+Then fetch the grammars, build them, and copy the query files:
 
 ```sh
-cp -r runtime/queries/odoc_mld ~/.config/helix/runtime/queries/odoc_mld
+hx --grammar fetch
+hx --grammar build
+cp -r runtime/queries/odoc-mld ~/.config/helix/runtime/queries/odoc-mld
 ```
 
 Or symlink them into your Helix runtime directory. The `injections.scm` file injects OCaml syntax highlighting into `{[ ... ]}` code blocks.
