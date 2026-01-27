@@ -1,26 +1,40 @@
 # tree-sitter-odoc-mld
 
-A [Tree-sitter](https://tree-sitter.github.io/) grammar for OCaml odoc `.mld` files.
+A [Tree-sitter](https://tree-sitter.github.io/) grammar for OCaml odoc `.mld` files, with [Helix](https://helix-editor.com/) syntax highlighting and language injection support.
 
-odoc markup is **not** Markdown. It uses `{tag ...}` delimiters for structured content, `[code]` for inline code, and `{[ ... ]}` for OCaml code blocks.
+This grammar was implemented entirely by [Claude](https://claude.ai/) (Anthropic's AI assistant) using [Claude Code](https://docs.anthropic.com/en/docs/claude-code). A human provided the requirements specification, performed all testing in Helix, reported issues, and guided iterative improvements to the highlighting queries.
 
 ## Supported constructs
 
 | Construct | Syntax | Node type |
 |-----------|--------|-----------|
 | Headings | `{0 Title}` .. `{4 Title}` | `heading` |
-| Code blocks | `{[ ... ]}` | `code_block` / `code_content` |
-| Verbatim | `{v ... v}` | `verbatim_block` / `verbatim_content` |
+| Code blocks | `{[ ... ]}` | `code_block` |
+| Tagged code blocks | `{@lang[ ... ]}` | `tagged_code_block` |
+| Verbatim | `{v ... v}` | `verbatim_block` |
 | Inline code | `[ ... ]` | `inline_code` |
 | Bold | `{b ...}` | `bold` |
 | Italic | `{i ...}` | `italic` |
 | Emphasis | `{e ...}` | `emph` |
 | Reference | `{!id}` | `ref` |
 | Ref with text | `{{!id} text}` | `ref_with_text` |
+| Link | `{{: url} text}` | `link` |
 | Unordered list | `- item` | `ul_item` |
 | Ordered list | `1. item` | `ol_item` |
+| Tagged unordered list | `{ul {- item} ...}` | `tagged_ul` |
+| Tagged ordered list | `{ol {- item} ...}` | `tagged_ol` |
 | Block math | `{math ...}` | `math_block` |
 | Inline math | `{m ...}` | `math_inline` |
+
+## Highlighting
+
+All constructs have consistent delimiter highlighting that matches their content style. Special characters like `!` in references and `:` in links are highlighted as operators to distinguish them from surrounding braces.
+
+## Language injection
+
+- Plain code blocks `{[ ... ]}` inject OCaml by default.
+- Tagged code blocks `{@lang[ ... ]}` inject the specified language (e.g. `{@python[ ... ]}` injects Python, `{@rust[ ... ]}` injects Rust).
+- Verbatim blocks `{v ... v}` have no injection.
 
 ## Example input
 
@@ -37,10 +51,19 @@ let rec fib n =
   else fib (n - 1) + fib (n - 2)
 ]}
 
-See {!Map} and {{!List.map} map} for details.
+{@python[
+def greet(name):
+    return f"Hello, {name}!"
+]}
 
-- First item with {i emphasis}
-- Second item with [inline code]
+See {!Map} and {{!List.map} map} for details.
+Visit {{: https://ocaml.org} the OCaml website}.
+
+{ul {- First item with {b bold}}
+    {- Second item with [inline code]}}
+
+1. Ordered item
+2. Another with {i emphasis}
 
 {m a^2 + b^2 = c^2}
 ```
@@ -71,10 +94,9 @@ Add the following to your `languages.toml`:
 ```toml
 [[language]]
 name          = "odoc-mld"
+grammar       = "odoc_mld"
 scope         = "source.odoc_mld"
 file-types    = ["mld"]
-roots         = []
-comment-token = ""
 indent        = { tab-width = 2, unit = "  " }
 
 [[grammar]]
@@ -82,12 +104,15 @@ name          = "odoc_mld"
 source        = { git = "https://gitlab.com/manenko/tree-sitter-odoc-mld", rev = "development" }
 ```
 
-Then fetch the grammars, build them, and copy the query files:
+Then fetch and build the grammar:
 
 ```sh
 hx --grammar fetch
 hx --grammar build
-cp -r runtime/queries/odoc-mld ~/.config/helix/runtime/queries/odoc-mld
 ```
 
-Or symlink them into your Helix runtime directory. The `injections.scm` file injects OCaml syntax highlighting into `{[ ... ]}` code blocks.
+Copy or symlink the query files into your Helix runtime:
+
+```sh
+ln -dst ~/.config/helix/runtime/queries/ ~/.config/helix/runtime/grammars/sources/odoc_mld/runtime/queries/odoc-mld
+```
