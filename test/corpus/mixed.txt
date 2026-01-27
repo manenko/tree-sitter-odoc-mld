@@ -1,0 +1,49 @@
+================================================================================
+Mixed: heading with list and code block
+================================================================================
+
+{2 API}
+- Use {b init} for setup
+- See {!Result} for errors
+
+--------------------------------------------------------------------------------
+
+(document
+  (heading
+    level: (heading_level)
+    content: (heading_content
+      (word)))
+  (ul_item
+    (ul_bullet)
+    (word)
+    (bold
+      content: (word))
+    (word)
+    (word))
+  (ul_item
+    (ul_bullet)
+    (word)
+    (ref
+      id: (ref_id))
+    (word)
+    (word)))
+
+================================================================================
+Paragraph with various inline elements
+================================================================================
+
+This library provides {b fast} and {i safe} primitives.
+
+--------------------------------------------------------------------------------
+
+(document
+  (paragraph
+    (word)
+    (word)
+    (word)
+    (bold
+      content: (word))
+    (word)
+    (italic
+      content: (word))
+    (word)))

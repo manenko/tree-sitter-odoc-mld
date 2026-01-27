@@ -1,0 +1,46 @@
+================================================================================
+Unordered list items
+================================================================================
+
+- First item with {i emphasis}
+- Second item with [inline code]
+
+--------------------------------------------------------------------------------
+
+(document
+  (ul_item
+    (ul_bullet)
+    (word)
+    (word)
+    (word)
+    (italic
+      content: (word)))
+  (ul_item
+    (ul_bullet)
+    (word)
+    (word)
+    (word)
+    (inline_code
+      (inline_code_content))))
+
+================================================================================
+Ordered list items
+================================================================================
+
+1. First ordered
+2. Second ordered with {b bold}
+
+--------------------------------------------------------------------------------
+
+(document
+  (ol_item
+    (ol_number)
+    (word)
+    (word))
+  (ol_item
+    (ol_number)
+    (word)
+    (word)
+    (word)
+    (bold
+      content: (word))))

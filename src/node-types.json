@@ -1,0 +1,624 @@
+[
+  {
+    "type": "bold",
+    "named": true,
+    "fields": {
+      "content": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "bold",
+            "named": true
+          },
+          {
+            "type": "emph",
+            "named": true
+          },
+          {
+            "type": "inline_code",
+            "named": true
+          },
+          {
+            "type": "italic",
+            "named": true
+          },
+          {
+            "type": "math_inline",
+            "named": true
+          },
+          {
+            "type": "ref",
+            "named": true
+          },
+          {
+            "type": "ref_with_text",
+            "named": true
+          },
+          {
+            "type": "word",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "code_block",
+    "named": true,
+    "fields": {
+      "content": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "code_content",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "document",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "code_block",
+          "named": true
+        },
+        {
+          "type": "heading",
+          "named": true
+        },
+        {
+          "type": "math_block",
+          "named": true
+        },
+        {
+          "type": "ol_item",
+          "named": true
+        },
+        {
+          "type": "paragraph",
+          "named": true
+        },
+        {
+          "type": "ul_item",
+          "named": true
+        },
+        {
+          "type": "verbatim_block",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "emph",
+    "named": true,
+    "fields": {
+      "content": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "bold",
+            "named": true
+          },
+          {
+            "type": "emph",
+            "named": true
+          },
+          {
+            "type": "inline_code",
+            "named": true
+          },
+          {
+            "type": "italic",
+            "named": true
+          },
+          {
+            "type": "math_inline",
+            "named": true
+          },
+          {
+            "type": "ref",
+            "named": true
+          },
+          {
+            "type": "ref_with_text",
+            "named": true
+          },
+          {
+            "type": "word",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "heading",
+    "named": true,
+    "fields": {
+      "content": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "heading_content",
+            "named": true
+          }
+        ]
+      },
+      "level": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "heading_level",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "heading_content",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bold",
+          "named": true
+        },
+        {
+          "type": "emph",
+          "named": true
+        },
+        {
+          "type": "inline_code",
+          "named": true
+        },
+        {
+          "type": "italic",
+          "named": true
+        },
+        {
+          "type": "math_inline",
+          "named": true
+        },
+        {
+          "type": "ref",
+          "named": true
+        },
+        {
+          "type": "ref_with_text",
+          "named": true
+        },
+        {
+          "type": "word",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "inline_code",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "inline_code_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "italic",
+    "named": true,
+    "fields": {
+      "content": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "bold",
+            "named": true
+          },
+          {
+            "type": "emph",
+            "named": true
+          },
+          {
+            "type": "inline_code",
+            "named": true
+          },
+          {
+            "type": "italic",
+            "named": true
+          },
+          {
+            "type": "math_inline",
+            "named": true
+          },
+          {
+            "type": "ref",
+            "named": true
+          },
+          {
+            "type": "ref_with_text",
+            "named": true
+          },
+          {
+            "type": "word",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "math_block",
+    "named": true,
+    "fields": {
+      "content": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "math_content",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "math_inline",
+    "named": true,
+    "fields": {
+      "content": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "math_content",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "ol_item",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bold",
+          "named": true
+        },
+        {
+          "type": "emph",
+          "named": true
+        },
+        {
+          "type": "inline_code",
+          "named": true
+        },
+        {
+          "type": "italic",
+          "named": true
+        },
+        {
+          "type": "math_inline",
+          "named": true
+        },
+        {
+          "type": "ol_number",
+          "named": true
+        },
+        {
+          "type": "ref",
+          "named": true
+        },
+        {
+          "type": "ref_with_text",
+          "named": true
+        },
+        {
+          "type": "word",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "paragraph",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bold",
+          "named": true
+        },
+        {
+          "type": "emph",
+          "named": true
+        },
+        {
+          "type": "inline_code",
+          "named": true
+        },
+        {
+          "type": "italic",
+          "named": true
+        },
+        {
+          "type": "math_inline",
+          "named": true
+        },
+        {
+          "type": "ref",
+          "named": true
+        },
+        {
+          "type": "ref_with_text",
+          "named": true
+        },
+        {
+          "type": "word",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "ref",
+    "named": true,
+    "fields": {
+      "id": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "ref_id",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "ref_with_text",
+    "named": true,
+    "fields": {
+      "id": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "ref_id",
+            "named": true
+          }
+        ]
+      },
+      "text": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "bold",
+            "named": true
+          },
+          {
+            "type": "emph",
+            "named": true
+          },
+          {
+            "type": "inline_code",
+            "named": true
+          },
+          {
+            "type": "italic",
+            "named": true
+          },
+          {
+            "type": "math_inline",
+            "named": true
+          },
+          {
+            "type": "ref",
+            "named": true
+          },
+          {
+            "type": "ref_with_text",
+            "named": true
+          },
+          {
+            "type": "word",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "ul_item",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bold",
+          "named": true
+        },
+        {
+          "type": "emph",
+          "named": true
+        },
+        {
+          "type": "inline_code",
+          "named": true
+        },
+        {
+          "type": "italic",
+          "named": true
+        },
+        {
+          "type": "math_inline",
+          "named": true
+        },
+        {
+          "type": "ref",
+          "named": true
+        },
+        {
+          "type": "ref_with_text",
+          "named": true
+        },
+        {
+          "type": "ul_bullet",
+          "named": true
+        },
+        {
+          "type": "word",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "verbatim_block",
+    "named": true,
+    "fields": {
+      "content": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "verbatim_content",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "[",
+    "named": false
+  },
+  {
+    "type": "]",
+    "named": false
+  },
+  {
+    "type": "]}",
+    "named": false
+  },
+  {
+    "type": "code_content",
+    "named": true
+  },
+  {
+    "type": "heading_level",
+    "named": true
+  },
+  {
+    "type": "inline_code_content",
+    "named": true
+  },
+  {
+    "type": "math_content",
+    "named": true
+  },
+  {
+    "type": "ol_number",
+    "named": true
+  },
+  {
+    "type": "ref_id",
+    "named": true
+  },
+  {
+    "type": "ul_bullet",
+    "named": true
+  },
+  {
+    "type": "verbatim_content",
+    "named": true
+  },
+  {
+    "type": "v}",
+    "named": false
+  },
+  {
+    "type": "word",
+    "named": true
+  },
+  {
+    "type": "{",
+    "named": false
+  },
+  {
+    "type": "{!",
+    "named": false
+  },
+  {
+    "type": "{[",
+    "named": false
+  },
+  {
+    "type": "{b",
+    "named": false
+  },
+  {
+    "type": "{e",
+    "named": false
+  },
+  {
+    "type": "{i",
+    "named": false
+  },
+  {
+    "type": "{m",
+    "named": false
+  },
+  {
+    "type": "{math",
+    "named": false
+  },
+  {
+    "type": "{v",
+    "named": false
+  },
+  {
+    "type": "{{!",
+    "named": false
+  },
+  {
+    "type": "}",
+    "named": false
+  }
+]

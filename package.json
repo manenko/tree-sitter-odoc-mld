@@ -1,0 +1,34 @@
+{
+  "name": "tree-sitter-odoc-mld",
+  "version": "0.1.0",
+  "description": "Tree-sitter grammar for OCaml odoc .mld files",
+  "main": "bindings/node",
+  "keywords": [
+    "tree-sitter",
+    "ocaml",
+    "odoc",
+    "mld"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "nan": "^2.18.0"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.24.0"
+  },
+  "scripts": {
+    "generate": "tree-sitter generate",
+    "test": "tree-sitter test",
+    "build": "tree-sitter generate && tree-sitter test"
+  },
+  "tree-sitter": [
+    {
+      "scope": "source.odoc_mld",
+      "file-types": [
+        "mld"
+      ],
+      "highlights": "runtime/queries/odoc_mld/highlights.scm",
+      "injections": "runtime/queries/odoc_mld/injections.scm"
+    }
+  ]
+}
