@@ -115,7 +115,7 @@ module.exports = grammar({
         "{{:",
         field("url", $.link_url),
         "}",
-        field("text", repeat1($._inline)),
+        field("text", repeat1(choice($._inline, $._newline))),
         "}",
       ),
 

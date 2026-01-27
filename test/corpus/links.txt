@@ -48,3 +48,21 @@ Link inside a list item
         (link
           url: (link_url)
           text: (word))))))
+
+================================================================================
+Multiline link
+================================================================================
+
+{{: https://dev.realworldocaml.org/error-handling.html}
+Real World OCaml} suggests:
+
+--------------------------------------------------------------------------------
+
+(document
+  (paragraph
+    (link
+      url: (link_url)
+      text: (word)
+      text: (word)
+      text: (word))
+    (word)))

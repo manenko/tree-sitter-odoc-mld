@@ -324,7 +324,7 @@
     "fields": {
       "text": {
         "multiple": true,
-        "required": true,
+        "required": false,
         "types": [
           {
             "type": "bold",

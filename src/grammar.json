@@ -372,8 +372,17 @@
           "content": {
             "type": "REPEAT1",
             "content": {
-              "type": "SYMBOL",
-              "name": "_inline"
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "_inline"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_newline"
+                }
+              ]
             }
           }
         },
