@@ -58,9 +58,28 @@
 (ref_with_text
   text: (_) @markup.link.text)
 
-; Lists
+; Lists — plain
 (ul_bullet) @markup.list.unnumbered
 (ol_number) @markup.list.numbered
+
+; Lists — tagged {ul ...} / {ol ...}
+(tagged_ul
+  "{ul" @markup.list.unnumbered
+  "}" @punctuation.bracket)
+(tagged_ol
+  "{ol" @markup.list.numbered
+  "}" @punctuation.bracket)
+(list_item
+  "{-" @markup.list.unnumbered
+  "}" @punctuation.bracket)
+
+; Links
+(link
+  "{{:" @punctuation.delimiter
+  url: (link_url) @markup.link.url
+  "}" @punctuation.delimiter)
+(link
+  text: (_) @markup.link.text)
 
 ; Math
 (math_block

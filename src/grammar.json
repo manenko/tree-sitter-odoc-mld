@@ -347,6 +347,46 @@
       "type": "PATTERN",
       "value": "[^}\\s]+"
     },
+    "link": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "{{:"
+        },
+        {
+          "type": "FIELD",
+          "name": "url",
+          "content": {
+            "type": "SYMBOL",
+            "name": "link_url"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "}"
+        },
+        {
+          "type": "FIELD",
+          "name": "text",
+          "content": {
+            "type": "REPEAT1",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_inline"
+            }
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "}"
+        }
+      ]
+    },
+    "link_url": {
+      "type": "PATTERN",
+      "value": "[^}\\s]+"
+    },
     "ul_item": {
       "type": "SEQ",
       "members": [
@@ -386,6 +426,66 @@
     "ol_number": {
       "type": "PATTERN",
       "value": "[0-9]+\\. "
+    },
+    "tagged_ul": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "{ul"
+        },
+        {
+          "type": "REPEAT1",
+          "content": {
+            "type": "SYMBOL",
+            "name": "list_item"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "}"
+        }
+      ]
+    },
+    "tagged_ol": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "{ol"
+        },
+        {
+          "type": "REPEAT1",
+          "content": {
+            "type": "SYMBOL",
+            "name": "list_item"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "}"
+        }
+      ]
+    },
+    "list_item": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "{-"
+        },
+        {
+          "type": "REPEAT1",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_inline"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "}"
+        }
+      ]
     },
     "math_block": {
       "type": "SEQ",
@@ -470,7 +570,19 @@
         },
         {
           "type": "SYMBOL",
+          "name": "link"
+        },
+        {
+          "type": "SYMBOL",
           "name": "math_inline"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "tagged_ul"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "tagged_ol"
         },
         {
           "type": "SYMBOL",

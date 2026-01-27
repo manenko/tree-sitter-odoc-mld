@@ -108,9 +108,23 @@ module.exports = grammar({
     ref_id: () => /[^}\s]+/,
 
     // ---------------------------------------------------------------
+    // F2) Links: {{: url} display text}
+    // ---------------------------------------------------------------
+    link: ($) =>
+      seq(
+        "{{:",
+        field("url", $.link_url),
+        "}",
+        field("text", repeat1($._inline)),
+        "}",
+      ),
+
+    link_url: () => /[^}\s]+/,
+
+    // ---------------------------------------------------------------
     // G) Lists
-    //    Unordered: - item  (single line)
-    //    Ordered:   1. item (single line)
+    //    Plain:   - item  /  1. item  (single line)
+    //    Tagged:  {ul {- item} ...}  /  {ol {- item} ...}
     // ---------------------------------------------------------------
     ul_item: ($) =>
       seq($.ul_bullet, repeat1($._inline)),
@@ -121,6 +135,15 @@ module.exports = grammar({
       seq($.ol_number, repeat1($._inline)),
 
     ol_number: () => /[0-9]+\. /,
+
+    tagged_ul: ($) =>
+      seq("{ul", repeat1($.list_item), "}"),
+
+    tagged_ol: ($) =>
+      seq("{ol", repeat1($.list_item), "}"),
+
+    list_item: ($) =>
+      seq("{-", repeat1($._inline), "}"),
 
     // ---------------------------------------------------------------
     // H) Math: {math ... } and {m ...}
@@ -146,7 +169,10 @@ module.exports = grammar({
         $.inline_code,
         $.ref,
         $.ref_with_text,
+        $.link,
         $.math_inline,
+        $.tagged_ul,
+        $.tagged_ol,
         $.word,
       ),
 

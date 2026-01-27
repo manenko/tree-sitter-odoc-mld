@@ -24,6 +24,10 @@
             "named": true
           },
           {
+            "type": "link",
+            "named": true
+          },
+          {
             "type": "math_inline",
             "named": true
           },
@@ -33,6 +37,14 @@
           },
           {
             "type": "ref_with_text",
+            "named": true
+          },
+          {
+            "type": "tagged_ol",
+            "named": true
+          },
+          {
+            "type": "tagged_ul",
             "named": true
           },
           {
@@ -123,6 +135,10 @@
             "named": true
           },
           {
+            "type": "link",
+            "named": true
+          },
+          {
             "type": "math_inline",
             "named": true
           },
@@ -132,6 +148,14 @@
           },
           {
             "type": "ref_with_text",
+            "named": true
+          },
+          {
+            "type": "tagged_ol",
+            "named": true
+          },
+          {
+            "type": "tagged_ul",
             "named": true
           },
           {
@@ -193,6 +217,10 @@
           "named": true
         },
         {
+          "type": "link",
+          "named": true
+        },
+        {
           "type": "math_inline",
           "named": true
         },
@@ -202,6 +230,14 @@
         },
         {
           "type": "ref_with_text",
+          "named": true
+        },
+        {
+          "type": "tagged_ol",
+          "named": true
+        },
+        {
+          "type": "tagged_ul",
           "named": true
         },
         {
@@ -251,6 +287,10 @@
             "named": true
           },
           {
+            "type": "link",
+            "named": true
+          },
+          {
             "type": "math_inline",
             "named": true
           },
@@ -263,11 +303,145 @@
             "named": true
           },
           {
+            "type": "tagged_ol",
+            "named": true
+          },
+          {
+            "type": "tagged_ul",
+            "named": true
+          },
+          {
             "type": "word",
             "named": true
           }
         ]
       }
+    }
+  },
+  {
+    "type": "link",
+    "named": true,
+    "fields": {
+      "text": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "bold",
+            "named": true
+          },
+          {
+            "type": "emph",
+            "named": true
+          },
+          {
+            "type": "inline_code",
+            "named": true
+          },
+          {
+            "type": "italic",
+            "named": true
+          },
+          {
+            "type": "link",
+            "named": true
+          },
+          {
+            "type": "math_inline",
+            "named": true
+          },
+          {
+            "type": "ref",
+            "named": true
+          },
+          {
+            "type": "ref_with_text",
+            "named": true
+          },
+          {
+            "type": "tagged_ol",
+            "named": true
+          },
+          {
+            "type": "tagged_ul",
+            "named": true
+          },
+          {
+            "type": "word",
+            "named": true
+          }
+        ]
+      },
+      "url": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "link_url",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "link_url",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "list_item",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bold",
+          "named": true
+        },
+        {
+          "type": "emph",
+          "named": true
+        },
+        {
+          "type": "inline_code",
+          "named": true
+        },
+        {
+          "type": "italic",
+          "named": true
+        },
+        {
+          "type": "link",
+          "named": true
+        },
+        {
+          "type": "math_inline",
+          "named": true
+        },
+        {
+          "type": "ref",
+          "named": true
+        },
+        {
+          "type": "ref_with_text",
+          "named": true
+        },
+        {
+          "type": "tagged_ol",
+          "named": true
+        },
+        {
+          "type": "tagged_ul",
+          "named": true
+        },
+        {
+          "type": "word",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -327,6 +501,10 @@
           "named": true
         },
         {
+          "type": "link",
+          "named": true
+        },
+        {
           "type": "math_inline",
           "named": true
         },
@@ -340,6 +518,14 @@
         },
         {
           "type": "ref_with_text",
+          "named": true
+        },
+        {
+          "type": "tagged_ol",
+          "named": true
+        },
+        {
+          "type": "tagged_ul",
           "named": true
         },
         {
@@ -374,6 +560,10 @@
           "named": true
         },
         {
+          "type": "link",
+          "named": true
+        },
+        {
           "type": "math_inline",
           "named": true
         },
@@ -383,6 +573,14 @@
         },
         {
           "type": "ref_with_text",
+          "named": true
+        },
+        {
+          "type": "tagged_ol",
+          "named": true
+        },
+        {
+          "type": "tagged_ul",
           "named": true
         },
         {
@@ -407,6 +605,11 @@
         ]
       }
     }
+  },
+  {
+    "type": "ref_id",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "ref_with_text",
@@ -443,6 +646,10 @@
             "named": true
           },
           {
+            "type": "link",
+            "named": true
+          },
+          {
             "type": "math_inline",
             "named": true
           },
@@ -455,11 +662,49 @@
             "named": true
           },
           {
+            "type": "tagged_ol",
+            "named": true
+          },
+          {
+            "type": "tagged_ul",
+            "named": true
+          },
+          {
             "type": "word",
             "named": true
           }
         ]
       }
+    }
+  },
+  {
+    "type": "tagged_ol",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "list_item",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "tagged_ul",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "list_item",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -487,6 +732,10 @@
           "named": true
         },
         {
+          "type": "link",
+          "named": true
+        },
+        {
           "type": "math_inline",
           "named": true
         },
@@ -496,6 +745,14 @@
         },
         {
           "type": "ref_with_text",
+          "named": true
+        },
+        {
+          "type": "tagged_ol",
+          "named": true
+        },
+        {
+          "type": "tagged_ul",
           "named": true
         },
         {
@@ -558,10 +815,6 @@
     "named": true
   },
   {
-    "type": "ref_id",
-    "named": true
-  },
-  {
     "type": "ul_bullet",
     "named": true
   },
@@ -583,6 +836,10 @@
   },
   {
     "type": "{!",
+    "named": false
+  },
+  {
+    "type": "{-",
     "named": false
   },
   {
@@ -610,11 +867,23 @@
     "named": false
   },
   {
+    "type": "{ol",
+    "named": false
+  },
+  {
+    "type": "{ul",
+    "named": false
+  },
+  {
     "type": "{v",
     "named": false
   },
   {
     "type": "{{!",
+    "named": false
+  },
+  {
+    "type": "{{:",
     "named": false
   },
   {
