@@ -10,6 +10,15 @@
 (code_block
   "{[" @markup.raw.block
   "]}" @markup.raw.block)
+
+; Tagged code blocks: {@lang[ ... ]}
+(tagged_code_block
+  "{" @markup.raw.block
+  "@" @operator
+  language: (code_language) @label
+  "[" @markup.raw.block
+  "]}" @markup.raw.block)
+
 (code_content) @markup.raw.block
 
 ; Verbatim blocks: delimiters vs content

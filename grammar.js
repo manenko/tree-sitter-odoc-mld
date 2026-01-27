@@ -28,6 +28,7 @@ module.exports = grammar({
       choice(
         $.heading,
         $.code_block,
+        $.tagged_code_block,
         $.verbatim_block,
         $.math_block,
         $.ul_item,
@@ -54,11 +55,24 @@ module.exports = grammar({
     heading_content: ($) => repeat1($._inline),
 
     // ---------------------------------------------------------------
-    // B) Code blocks: {[ ... ]}
-    //    Content is raw OCaml code. Newlines are part of the content.
+    // B) Code blocks:
+    //    Plain:  {[ ... ]}         (defaults to OCaml)
+    //    Tagged: {@lang[ ... ]}    (specified language)
     // ---------------------------------------------------------------
     code_block: ($) =>
       seq("{[", optional(field("content", $.code_content)), "]}"),
+
+    tagged_code_block: ($) =>
+      seq(
+        "{",
+        "@",
+        field("language", $.code_language),
+        "[",
+        optional(field("content", $.code_content)),
+        "]}",
+      ),
+
+    code_language: () => /[a-zA-Z][a-zA-Z0-9_-]*/,
 
     // Match everything up to ]} including newlines
     code_content: () => token(prec(-1, /([^\]]|\][^}]|\r?\n)+/)),

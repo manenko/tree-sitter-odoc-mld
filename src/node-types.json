@@ -100,6 +100,10 @@
           "named": true
         },
         {
+          "type": "tagged_code_block",
+          "named": true
+        },
+        {
           "type": "ul_item",
           "named": true
         },
@@ -678,6 +682,32 @@
     }
   },
   {
+    "type": "tagged_code_block",
+    "named": true,
+    "fields": {
+      "content": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "code_content",
+            "named": true
+          }
+        ]
+      },
+      "language": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "code_language",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "tagged_ol",
     "named": true,
     "fields": {},
@@ -791,6 +821,10 @@
     "named": false
   },
   {
+    "type": "@",
+    "named": false
+  },
+  {
     "type": "[",
     "named": false
   },
@@ -804,6 +838,10 @@
   },
   {
     "type": "code_content",
+    "named": true
+  },
+  {
+    "type": "code_language",
     "named": true
   },
   {
