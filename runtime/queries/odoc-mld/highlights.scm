@@ -1,8 +1,8 @@
 ; Headings
 (heading
-  "{" @punctuation.bracket
-  level: (heading_level) @markup.heading.marker
-  "}" @punctuation.bracket) @markup.heading
+  "{" @markup.heading
+  level: (heading_level) @constant.numeric
+  "}" @markup.heading)
 
 (heading_content) @markup.heading
 
