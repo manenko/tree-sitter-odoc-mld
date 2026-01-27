@@ -75,11 +75,10 @@
 
 ; Links
 (link
-  "{{:" @punctuation.delimiter
+  "{{:" @markup.link
   url: (link_url) @markup.link.url
-  "}" @punctuation.delimiter)
-(link
-  text: (_) @markup.link.text)
+  "}" @markup.link)
+
 
 ; Math
 (math_block
