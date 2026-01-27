@@ -79,7 +79,7 @@ indent = { tab-width = 2, unit = "  " }
 
 [[grammar]]
 name = "odoc_mld"
-source = { git = "https://github.com/YOUR_USER/tree-sitter-odoc-mld", rev = "main" }
+source = { git = "https://gitlab.com/manenko/tree-sitter-odoc-mld", rev = "main" }
 ```
 
 Then copy the query files:
