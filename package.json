@@ -27,8 +27,8 @@
       "file-types": [
         "mld"
       ],
-      "highlights": "runtime/queries/odoc_mld/highlights.scm",
-      "injections": "runtime/queries/odoc_mld/injections.scm"
+      "highlights": "runtime/queries/odoc-mld/highlights.scm",
+      "injections": "runtime/queries/odoc-mld/injections.scm"
     }
   ]
 }
