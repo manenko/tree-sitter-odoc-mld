@@ -291,7 +291,11 @@
       "members": [
         {
           "type": "STRING",
-          "value": "{!"
+          "value": "{"
+        },
+        {
+          "type": "STRING",
+          "value": "!"
         },
         {
           "type": "FIELD",
@@ -312,7 +316,15 @@
       "members": [
         {
           "type": "STRING",
-          "value": "{{!"
+          "value": "{"
+        },
+        {
+          "type": "STRING",
+          "value": "{"
+        },
+        {
+          "type": "STRING",
+          "value": "!"
         },
         {
           "type": "FIELD",
@@ -352,7 +364,15 @@
       "members": [
         {
           "type": "STRING",
-          "value": "{{:"
+          "value": "{"
+        },
+        {
+          "type": "STRING",
+          "value": "{"
+        },
+        {
+          "type": "STRING",
+          "value": ":"
         },
         {
           "type": "FIELD",

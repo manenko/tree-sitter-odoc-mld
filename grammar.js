@@ -94,11 +94,13 @@ module.exports = grammar({
     // ---------------------------------------------------------------
     // F) References: {!id} and {{!id} display text}
     // ---------------------------------------------------------------
-    ref: ($) => seq("{!", field("id", $.ref_id), "}"),
+    ref: ($) => seq("{", "!", field("id", $.ref_id), "}"),
 
     ref_with_text: ($) =>
       seq(
-        "{{!",
+        "{",
+        "{",
+        "!",
         field("id", $.ref_id),
         "}",
         field("text", repeat1($._inline)),
@@ -112,7 +114,9 @@ module.exports = grammar({
     // ---------------------------------------------------------------
     link: ($) =>
       seq(
-        "{{:",
+        "{",
+        "{",
+        ":",
         field("url", $.link_url),
         "}",
         field("text", repeat1(choice($._inline, $._newline))),
