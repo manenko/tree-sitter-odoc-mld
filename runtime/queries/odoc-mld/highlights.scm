@@ -65,13 +65,13 @@
 ; Lists — tagged {ul ...} / {ol ...}
 (tagged_ul
   "{ul" @markup.list.unnumbered
-  "}" @punctuation.bracket)
+  "}" @markup.list.unnumbered)
 (tagged_ol
   "{ol" @markup.list.numbered
-  "}" @punctuation.bracket)
+  "}" @markup.list.numbered)
 (list_item
   "{-" @markup.list.unnumbered
-  "}" @punctuation.bracket)
+  "}" @markup.list.unnumbered)
 
 ; Links
 (link
