@@ -20,15 +20,5 @@
     "generate": "tree-sitter generate",
     "test": "tree-sitter test",
     "build": "tree-sitter generate && tree-sitter test"
-  },
-  "tree-sitter": [
-    {
-      "scope": "source.odoc_mld",
-      "file-types": [
-        "mld"
-      ],
-      "highlights": "runtime/queries/odoc-mld/highlights.scm",
-      "injections": "runtime/queries/odoc-mld/injections.scm"
-    }
-  ]
+  }
 }
