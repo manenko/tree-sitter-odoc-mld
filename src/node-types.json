@@ -1,5 +1,119 @@
 [
   {
+    "type": "author_tag",
+    "named": true,
+    "fields": {
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "tag_text",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "before_tag",
+    "named": true,
+    "fields": {
+      "text": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "bold",
+            "named": true
+          },
+          {
+            "type": "center",
+            "named": true
+          },
+          {
+            "type": "emph",
+            "named": true
+          },
+          {
+            "type": "escape_sequence",
+            "named": true
+          },
+          {
+            "type": "inline_code",
+            "named": true
+          },
+          {
+            "type": "italic",
+            "named": true
+          },
+          {
+            "type": "left",
+            "named": true
+          },
+          {
+            "type": "link",
+            "named": true
+          },
+          {
+            "type": "math_inline",
+            "named": true
+          },
+          {
+            "type": "media",
+            "named": true
+          },
+          {
+            "type": "ref",
+            "named": true
+          },
+          {
+            "type": "ref_with_text",
+            "named": true
+          },
+          {
+            "type": "right",
+            "named": true
+          },
+          {
+            "type": "subscript",
+            "named": true
+          },
+          {
+            "type": "superscript",
+            "named": true
+          },
+          {
+            "type": "tagged_ol",
+            "named": true
+          },
+          {
+            "type": "tagged_ul",
+            "named": true
+          },
+          {
+            "type": "target_specific",
+            "named": true
+          },
+          {
+            "type": "word",
+            "named": true
+          }
+        ]
+      },
+      "version": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "word",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "bold",
     "named": true,
     "fields": {
@@ -12,7 +126,15 @@
             "named": true
           },
           {
+            "type": "center",
+            "named": true
+          },
+          {
             "type": "emph",
+            "named": true
+          },
+          {
+            "type": "escape_sequence",
             "named": true
           },
           {
@@ -24,11 +146,19 @@
             "named": true
           },
           {
+            "type": "left",
+            "named": true
+          },
+          {
             "type": "link",
             "named": true
           },
           {
             "type": "math_inline",
+            "named": true
+          },
+          {
+            "type": "media",
             "named": true
           },
           {
@@ -40,11 +170,115 @@
             "named": true
           },
           {
+            "type": "right",
+            "named": true
+          },
+          {
+            "type": "subscript",
+            "named": true
+          },
+          {
+            "type": "superscript",
+            "named": true
+          },
+          {
             "type": "tagged_ol",
             "named": true
           },
           {
             "type": "tagged_ul",
+            "named": true
+          },
+          {
+            "type": "target_specific",
+            "named": true
+          },
+          {
+            "type": "word",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "center",
+    "named": true,
+    "fields": {
+      "content": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "bold",
+            "named": true
+          },
+          {
+            "type": "center",
+            "named": true
+          },
+          {
+            "type": "emph",
+            "named": true
+          },
+          {
+            "type": "escape_sequence",
+            "named": true
+          },
+          {
+            "type": "inline_code",
+            "named": true
+          },
+          {
+            "type": "italic",
+            "named": true
+          },
+          {
+            "type": "left",
+            "named": true
+          },
+          {
+            "type": "link",
+            "named": true
+          },
+          {
+            "type": "math_inline",
+            "named": true
+          },
+          {
+            "type": "media",
+            "named": true
+          },
+          {
+            "type": "ref",
+            "named": true
+          },
+          {
+            "type": "ref_with_text",
+            "named": true
+          },
+          {
+            "type": "right",
+            "named": true
+          },
+          {
+            "type": "subscript",
+            "named": true
+          },
+          {
+            "type": "superscript",
+            "named": true
+          },
+          {
+            "type": "tagged_ol",
+            "named": true
+          },
+          {
+            "type": "tagged_ul",
+            "named": true
+          },
+          {
+            "type": "target_specific",
             "named": true
           },
           {
@@ -72,8 +306,102 @@
     }
   },
   {
+    "type": "code_language",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "deprecated_tag",
+    "named": true,
+    "fields": {
+      "text": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "bold",
+            "named": true
+          },
+          {
+            "type": "center",
+            "named": true
+          },
+          {
+            "type": "emph",
+            "named": true
+          },
+          {
+            "type": "escape_sequence",
+            "named": true
+          },
+          {
+            "type": "inline_code",
+            "named": true
+          },
+          {
+            "type": "italic",
+            "named": true
+          },
+          {
+            "type": "left",
+            "named": true
+          },
+          {
+            "type": "link",
+            "named": true
+          },
+          {
+            "type": "math_inline",
+            "named": true
+          },
+          {
+            "type": "media",
+            "named": true
+          },
+          {
+            "type": "ref",
+            "named": true
+          },
+          {
+            "type": "ref_with_text",
+            "named": true
+          },
+          {
+            "type": "right",
+            "named": true
+          },
+          {
+            "type": "subscript",
+            "named": true
+          },
+          {
+            "type": "superscript",
+            "named": true
+          },
+          {
+            "type": "tagged_ol",
+            "named": true
+          },
+          {
+            "type": "tagged_ul",
+            "named": true
+          },
+          {
+            "type": "target_specific",
+            "named": true
+          },
+          {
+            "type": "word",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "document",
     "named": true,
+    "root": true,
     "fields": {},
     "children": {
       "multiple": true,
@@ -88,7 +416,15 @@
           "named": true
         },
         {
+          "type": "indexlist_directive",
+          "named": true
+        },
+        {
           "type": "math_block",
+          "named": true
+        },
+        {
+          "type": "modules_directive",
           "named": true
         },
         {
@@ -97,6 +433,10 @@
         },
         {
           "type": "paragraph",
+          "named": true
+        },
+        {
+          "type": "tag",
           "named": true
         },
         {
@@ -127,7 +467,15 @@
             "named": true
           },
           {
+            "type": "center",
+            "named": true
+          },
+          {
             "type": "emph",
+            "named": true
+          },
+          {
+            "type": "escape_sequence",
             "named": true
           },
           {
@@ -139,11 +487,19 @@
             "named": true
           },
           {
+            "type": "left",
+            "named": true
+          },
+          {
             "type": "link",
             "named": true
           },
           {
             "type": "math_inline",
+            "named": true
+          },
+          {
+            "type": "media",
             "named": true
           },
           {
@@ -155,11 +511,27 @@
             "named": true
           },
           {
+            "type": "right",
+            "named": true
+          },
+          {
+            "type": "subscript",
+            "named": true
+          },
+          {
+            "type": "superscript",
+            "named": true
+          },
+          {
             "type": "tagged_ol",
             "named": true
           },
           {
             "type": "tagged_ul",
+            "named": true
+          },
+          {
+            "type": "target_specific",
             "named": true
           },
           {
@@ -171,6 +543,11 @@
     }
   },
   {
+    "type": "exception_name",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "heading",
     "named": true,
     "fields": {
@@ -180,6 +557,16 @@
         "types": [
           {
             "type": "heading_content",
+            "named": true
+          }
+        ]
+      },
+      "label": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "heading_label",
             "named": true
           }
         ]
@@ -209,7 +596,15 @@
           "named": true
         },
         {
+          "type": "center",
+          "named": true
+        },
+        {
           "type": "emph",
+          "named": true
+        },
+        {
+          "type": "escape_sequence",
           "named": true
         },
         {
@@ -221,11 +616,19 @@
           "named": true
         },
         {
+          "type": "left",
+          "named": true
+        },
+        {
           "type": "link",
           "named": true
         },
         {
           "type": "math_inline",
+          "named": true
+        },
+        {
+          "type": "media",
           "named": true
         },
         {
@@ -237,6 +640,18 @@
           "named": true
         },
         {
+          "type": "right",
+          "named": true
+        },
+        {
+          "type": "subscript",
+          "named": true
+        },
+        {
+          "type": "superscript",
+          "named": true
+        },
+        {
           "type": "tagged_ol",
           "named": true
         },
@@ -245,11 +660,20 @@
           "named": true
         },
         {
+          "type": "target_specific",
+          "named": true
+        },
+        {
           "type": "word",
           "named": true
         }
       ]
     }
+  },
+  {
+    "type": "hint_tag",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "inline_code",
@@ -279,7 +703,15 @@
             "named": true
           },
           {
+            "type": "center",
+            "named": true
+          },
+          {
             "type": "emph",
+            "named": true
+          },
+          {
+            "type": "escape_sequence",
             "named": true
           },
           {
@@ -291,11 +723,19 @@
             "named": true
           },
           {
+            "type": "left",
+            "named": true
+          },
+          {
             "type": "link",
             "named": true
           },
           {
             "type": "math_inline",
+            "named": true
+          },
+          {
+            "type": "media",
             "named": true
           },
           {
@@ -307,11 +747,115 @@
             "named": true
           },
           {
+            "type": "right",
+            "named": true
+          },
+          {
+            "type": "subscript",
+            "named": true
+          },
+          {
+            "type": "superscript",
+            "named": true
+          },
+          {
             "type": "tagged_ol",
             "named": true
           },
           {
             "type": "tagged_ul",
+            "named": true
+          },
+          {
+            "type": "target_specific",
+            "named": true
+          },
+          {
+            "type": "word",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "left",
+    "named": true,
+    "fields": {
+      "content": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "bold",
+            "named": true
+          },
+          {
+            "type": "center",
+            "named": true
+          },
+          {
+            "type": "emph",
+            "named": true
+          },
+          {
+            "type": "escape_sequence",
+            "named": true
+          },
+          {
+            "type": "inline_code",
+            "named": true
+          },
+          {
+            "type": "italic",
+            "named": true
+          },
+          {
+            "type": "left",
+            "named": true
+          },
+          {
+            "type": "link",
+            "named": true
+          },
+          {
+            "type": "math_inline",
+            "named": true
+          },
+          {
+            "type": "media",
+            "named": true
+          },
+          {
+            "type": "ref",
+            "named": true
+          },
+          {
+            "type": "ref_with_text",
+            "named": true
+          },
+          {
+            "type": "right",
+            "named": true
+          },
+          {
+            "type": "subscript",
+            "named": true
+          },
+          {
+            "type": "superscript",
+            "named": true
+          },
+          {
+            "type": "tagged_ol",
+            "named": true
+          },
+          {
+            "type": "tagged_ul",
+            "named": true
+          },
+          {
+            "type": "target_specific",
             "named": true
           },
           {
@@ -335,7 +879,15 @@
             "named": true
           },
           {
+            "type": "center",
+            "named": true
+          },
+          {
             "type": "emph",
+            "named": true
+          },
+          {
+            "type": "escape_sequence",
             "named": true
           },
           {
@@ -347,11 +899,19 @@
             "named": true
           },
           {
+            "type": "left",
+            "named": true
+          },
+          {
             "type": "link",
             "named": true
           },
           {
             "type": "math_inline",
+            "named": true
+          },
+          {
+            "type": "media",
             "named": true
           },
           {
@@ -363,11 +923,27 @@
             "named": true
           },
           {
+            "type": "right",
+            "named": true
+          },
+          {
+            "type": "subscript",
+            "named": true
+          },
+          {
+            "type": "superscript",
+            "named": true
+          },
+          {
             "type": "tagged_ol",
             "named": true
           },
           {
             "type": "tagged_ul",
+            "named": true
+          },
+          {
+            "type": "target_specific",
             "named": true
           },
           {
@@ -406,7 +982,15 @@
           "named": true
         },
         {
+          "type": "center",
+          "named": true
+        },
+        {
           "type": "emph",
+          "named": true
+        },
+        {
+          "type": "escape_sequence",
           "named": true
         },
         {
@@ -418,11 +1002,19 @@
           "named": true
         },
         {
+          "type": "left",
+          "named": true
+        },
+        {
           "type": "link",
           "named": true
         },
         {
           "type": "math_inline",
+          "named": true
+        },
+        {
+          "type": "media",
           "named": true
         },
         {
@@ -434,11 +1026,27 @@
           "named": true
         },
         {
+          "type": "right",
+          "named": true
+        },
+        {
+          "type": "subscript",
+          "named": true
+        },
+        {
+          "type": "superscript",
+          "named": true
+        },
+        {
           "type": "tagged_ol",
           "named": true
         },
         {
           "type": "tagged_ul",
+          "named": true
+        },
+        {
+          "type": "target_specific",
           "named": true
         },
         {
@@ -481,6 +1089,165 @@
     }
   },
   {
+    "type": "media",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "media_simple",
+          "named": true
+        },
+        {
+          "type": "media_with_text",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "media_simple",
+    "named": true,
+    "fields": {
+      "source": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "media_source",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "media_source",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "media_with_text",
+    "named": true,
+    "fields": {
+      "source": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "media_source",
+            "named": true
+          }
+        ]
+      },
+      "text": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "bold",
+            "named": true
+          },
+          {
+            "type": "center",
+            "named": true
+          },
+          {
+            "type": "emph",
+            "named": true
+          },
+          {
+            "type": "escape_sequence",
+            "named": true
+          },
+          {
+            "type": "inline_code",
+            "named": true
+          },
+          {
+            "type": "italic",
+            "named": true
+          },
+          {
+            "type": "left",
+            "named": true
+          },
+          {
+            "type": "link",
+            "named": true
+          },
+          {
+            "type": "math_inline",
+            "named": true
+          },
+          {
+            "type": "media",
+            "named": true
+          },
+          {
+            "type": "ref",
+            "named": true
+          },
+          {
+            "type": "ref_with_text",
+            "named": true
+          },
+          {
+            "type": "right",
+            "named": true
+          },
+          {
+            "type": "subscript",
+            "named": true
+          },
+          {
+            "type": "superscript",
+            "named": true
+          },
+          {
+            "type": "tagged_ol",
+            "named": true
+          },
+          {
+            "type": "tagged_ul",
+            "named": true
+          },
+          {
+            "type": "target_specific",
+            "named": true
+          },
+          {
+            "type": "word",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "module_name",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "modules_directive",
+    "named": true,
+    "fields": {
+      "modules": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "module_name",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "ol_item",
     "named": true,
     "fields": {},
@@ -493,7 +1260,15 @@
           "named": true
         },
         {
+          "type": "center",
+          "named": true
+        },
+        {
           "type": "emph",
+          "named": true
+        },
+        {
+          "type": "escape_sequence",
           "named": true
         },
         {
@@ -505,11 +1280,19 @@
           "named": true
         },
         {
+          "type": "left",
+          "named": true
+        },
+        {
           "type": "link",
           "named": true
         },
         {
           "type": "math_inline",
+          "named": true
+        },
+        {
+          "type": "media",
           "named": true
         },
         {
@@ -525,11 +1308,27 @@
           "named": true
         },
         {
+          "type": "right",
+          "named": true
+        },
+        {
+          "type": "subscript",
+          "named": true
+        },
+        {
+          "type": "superscript",
+          "named": true
+        },
+        {
           "type": "tagged_ol",
           "named": true
         },
         {
           "type": "tagged_ul",
+          "named": true
+        },
+        {
+          "type": "target_specific",
           "named": true
         },
         {
@@ -552,7 +1351,15 @@
           "named": true
         },
         {
+          "type": "center",
+          "named": true
+        },
+        {
           "type": "emph",
+          "named": true
+        },
+        {
+          "type": "escape_sequence",
           "named": true
         },
         {
@@ -564,11 +1371,19 @@
           "named": true
         },
         {
+          "type": "left",
+          "named": true
+        },
+        {
           "type": "link",
           "named": true
         },
         {
           "type": "math_inline",
+          "named": true
+        },
+        {
+          "type": "media",
           "named": true
         },
         {
@@ -580,6 +1395,18 @@
           "named": true
         },
         {
+          "type": "right",
+          "named": true
+        },
+        {
+          "type": "subscript",
+          "named": true
+        },
+        {
+          "type": "superscript",
+          "named": true
+        },
+        {
           "type": "tagged_ol",
           "named": true
         },
@@ -588,10 +1415,210 @@
           "named": true
         },
         {
+          "type": "target_specific",
+          "named": true
+        },
+        {
           "type": "word",
           "named": true
         }
       ]
+    }
+  },
+  {
+    "type": "param_tag",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "param_name",
+            "named": true
+          }
+        ]
+      },
+      "text": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "bold",
+            "named": true
+          },
+          {
+            "type": "center",
+            "named": true
+          },
+          {
+            "type": "emph",
+            "named": true
+          },
+          {
+            "type": "escape_sequence",
+            "named": true
+          },
+          {
+            "type": "inline_code",
+            "named": true
+          },
+          {
+            "type": "italic",
+            "named": true
+          },
+          {
+            "type": "left",
+            "named": true
+          },
+          {
+            "type": "link",
+            "named": true
+          },
+          {
+            "type": "math_inline",
+            "named": true
+          },
+          {
+            "type": "media",
+            "named": true
+          },
+          {
+            "type": "ref",
+            "named": true
+          },
+          {
+            "type": "ref_with_text",
+            "named": true
+          },
+          {
+            "type": "right",
+            "named": true
+          },
+          {
+            "type": "subscript",
+            "named": true
+          },
+          {
+            "type": "superscript",
+            "named": true
+          },
+          {
+            "type": "tagged_ol",
+            "named": true
+          },
+          {
+            "type": "tagged_ul",
+            "named": true
+          },
+          {
+            "type": "target_specific",
+            "named": true
+          },
+          {
+            "type": "word",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "raise_tag",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "exception_name",
+            "named": true
+          }
+        ]
+      },
+      "text": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "bold",
+            "named": true
+          },
+          {
+            "type": "center",
+            "named": true
+          },
+          {
+            "type": "emph",
+            "named": true
+          },
+          {
+            "type": "escape_sequence",
+            "named": true
+          },
+          {
+            "type": "inline_code",
+            "named": true
+          },
+          {
+            "type": "italic",
+            "named": true
+          },
+          {
+            "type": "left",
+            "named": true
+          },
+          {
+            "type": "link",
+            "named": true
+          },
+          {
+            "type": "math_inline",
+            "named": true
+          },
+          {
+            "type": "media",
+            "named": true
+          },
+          {
+            "type": "ref",
+            "named": true
+          },
+          {
+            "type": "ref_with_text",
+            "named": true
+          },
+          {
+            "type": "right",
+            "named": true
+          },
+          {
+            "type": "subscript",
+            "named": true
+          },
+          {
+            "type": "superscript",
+            "named": true
+          },
+          {
+            "type": "tagged_ol",
+            "named": true
+          },
+          {
+            "type": "tagged_ul",
+            "named": true
+          },
+          {
+            "type": "target_specific",
+            "named": true
+          },
+          {
+            "type": "word",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -638,7 +1665,15 @@
             "named": true
           },
           {
+            "type": "center",
+            "named": true
+          },
+          {
             "type": "emph",
+            "named": true
+          },
+          {
+            "type": "escape_sequence",
             "named": true
           },
           {
@@ -650,11 +1685,19 @@
             "named": true
           },
           {
+            "type": "left",
+            "named": true
+          },
+          {
             "type": "link",
             "named": true
           },
           {
             "type": "math_inline",
+            "named": true
+          },
+          {
+            "type": "media",
             "named": true
           },
           {
@@ -666,6 +1709,18 @@
             "named": true
           },
           {
+            "type": "right",
+            "named": true
+          },
+          {
+            "type": "subscript",
+            "named": true
+          },
+          {
+            "type": "superscript",
+            "named": true
+          },
+          {
             "type": "tagged_ol",
             "named": true
           },
@@ -674,11 +1729,537 @@
             "named": true
           },
           {
+            "type": "target_specific",
+            "named": true
+          },
+          {
             "type": "word",
             "named": true
           }
         ]
       }
+    }
+  },
+  {
+    "type": "return_tag",
+    "named": true,
+    "fields": {
+      "text": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "bold",
+            "named": true
+          },
+          {
+            "type": "center",
+            "named": true
+          },
+          {
+            "type": "emph",
+            "named": true
+          },
+          {
+            "type": "escape_sequence",
+            "named": true
+          },
+          {
+            "type": "inline_code",
+            "named": true
+          },
+          {
+            "type": "italic",
+            "named": true
+          },
+          {
+            "type": "left",
+            "named": true
+          },
+          {
+            "type": "link",
+            "named": true
+          },
+          {
+            "type": "math_inline",
+            "named": true
+          },
+          {
+            "type": "media",
+            "named": true
+          },
+          {
+            "type": "ref",
+            "named": true
+          },
+          {
+            "type": "ref_with_text",
+            "named": true
+          },
+          {
+            "type": "right",
+            "named": true
+          },
+          {
+            "type": "subscript",
+            "named": true
+          },
+          {
+            "type": "superscript",
+            "named": true
+          },
+          {
+            "type": "tagged_ol",
+            "named": true
+          },
+          {
+            "type": "tagged_ul",
+            "named": true
+          },
+          {
+            "type": "target_specific",
+            "named": true
+          },
+          {
+            "type": "word",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "right",
+    "named": true,
+    "fields": {
+      "content": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "bold",
+            "named": true
+          },
+          {
+            "type": "center",
+            "named": true
+          },
+          {
+            "type": "emph",
+            "named": true
+          },
+          {
+            "type": "escape_sequence",
+            "named": true
+          },
+          {
+            "type": "inline_code",
+            "named": true
+          },
+          {
+            "type": "italic",
+            "named": true
+          },
+          {
+            "type": "left",
+            "named": true
+          },
+          {
+            "type": "link",
+            "named": true
+          },
+          {
+            "type": "math_inline",
+            "named": true
+          },
+          {
+            "type": "media",
+            "named": true
+          },
+          {
+            "type": "ref",
+            "named": true
+          },
+          {
+            "type": "ref_with_text",
+            "named": true
+          },
+          {
+            "type": "right",
+            "named": true
+          },
+          {
+            "type": "subscript",
+            "named": true
+          },
+          {
+            "type": "superscript",
+            "named": true
+          },
+          {
+            "type": "tagged_ol",
+            "named": true
+          },
+          {
+            "type": "tagged_ul",
+            "named": true
+          },
+          {
+            "type": "target_specific",
+            "named": true
+          },
+          {
+            "type": "word",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "see_ref",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "see_tag",
+    "named": true,
+    "fields": {
+      "ref": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "see_ref",
+            "named": true
+          }
+        ]
+      },
+      "text": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "bold",
+            "named": true
+          },
+          {
+            "type": "center",
+            "named": true
+          },
+          {
+            "type": "emph",
+            "named": true
+          },
+          {
+            "type": "escape_sequence",
+            "named": true
+          },
+          {
+            "type": "inline_code",
+            "named": true
+          },
+          {
+            "type": "italic",
+            "named": true
+          },
+          {
+            "type": "left",
+            "named": true
+          },
+          {
+            "type": "link",
+            "named": true
+          },
+          {
+            "type": "math_inline",
+            "named": true
+          },
+          {
+            "type": "media",
+            "named": true
+          },
+          {
+            "type": "ref",
+            "named": true
+          },
+          {
+            "type": "ref_with_text",
+            "named": true
+          },
+          {
+            "type": "right",
+            "named": true
+          },
+          {
+            "type": "subscript",
+            "named": true
+          },
+          {
+            "type": "superscript",
+            "named": true
+          },
+          {
+            "type": "tagged_ol",
+            "named": true
+          },
+          {
+            "type": "tagged_ul",
+            "named": true
+          },
+          {
+            "type": "target_specific",
+            "named": true
+          },
+          {
+            "type": "word",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "since_tag",
+    "named": true,
+    "fields": {
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "tag_text",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "subscript",
+    "named": true,
+    "fields": {
+      "content": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "bold",
+            "named": true
+          },
+          {
+            "type": "center",
+            "named": true
+          },
+          {
+            "type": "emph",
+            "named": true
+          },
+          {
+            "type": "escape_sequence",
+            "named": true
+          },
+          {
+            "type": "inline_code",
+            "named": true
+          },
+          {
+            "type": "italic",
+            "named": true
+          },
+          {
+            "type": "left",
+            "named": true
+          },
+          {
+            "type": "link",
+            "named": true
+          },
+          {
+            "type": "math_inline",
+            "named": true
+          },
+          {
+            "type": "media",
+            "named": true
+          },
+          {
+            "type": "ref",
+            "named": true
+          },
+          {
+            "type": "ref_with_text",
+            "named": true
+          },
+          {
+            "type": "right",
+            "named": true
+          },
+          {
+            "type": "subscript",
+            "named": true
+          },
+          {
+            "type": "superscript",
+            "named": true
+          },
+          {
+            "type": "tagged_ol",
+            "named": true
+          },
+          {
+            "type": "tagged_ul",
+            "named": true
+          },
+          {
+            "type": "target_specific",
+            "named": true
+          },
+          {
+            "type": "word",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "superscript",
+    "named": true,
+    "fields": {
+      "content": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "bold",
+            "named": true
+          },
+          {
+            "type": "center",
+            "named": true
+          },
+          {
+            "type": "emph",
+            "named": true
+          },
+          {
+            "type": "escape_sequence",
+            "named": true
+          },
+          {
+            "type": "inline_code",
+            "named": true
+          },
+          {
+            "type": "italic",
+            "named": true
+          },
+          {
+            "type": "left",
+            "named": true
+          },
+          {
+            "type": "link",
+            "named": true
+          },
+          {
+            "type": "math_inline",
+            "named": true
+          },
+          {
+            "type": "media",
+            "named": true
+          },
+          {
+            "type": "ref",
+            "named": true
+          },
+          {
+            "type": "ref_with_text",
+            "named": true
+          },
+          {
+            "type": "right",
+            "named": true
+          },
+          {
+            "type": "subscript",
+            "named": true
+          },
+          {
+            "type": "superscript",
+            "named": true
+          },
+          {
+            "type": "tagged_ol",
+            "named": true
+          },
+          {
+            "type": "tagged_ul",
+            "named": true
+          },
+          {
+            "type": "target_specific",
+            "named": true
+          },
+          {
+            "type": "word",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "tag",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "author_tag",
+          "named": true
+        },
+        {
+          "type": "before_tag",
+          "named": true
+        },
+        {
+          "type": "deprecated_tag",
+          "named": true
+        },
+        {
+          "type": "hint_tag",
+          "named": true
+        },
+        {
+          "type": "param_tag",
+          "named": true
+        },
+        {
+          "type": "raise_tag",
+          "named": true
+        },
+        {
+          "type": "return_tag",
+          "named": true
+        },
+        {
+          "type": "see_tag",
+          "named": true
+        },
+        {
+          "type": "since_tag",
+          "named": true
+        },
+        {
+          "type": "version_tag",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -738,6 +2319,37 @@
     }
   },
   {
+    "type": "target_name",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "target_specific",
+    "named": true,
+    "fields": {
+      "content": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "target_content",
+            "named": true
+          }
+        ]
+      },
+      "target": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "target_name",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "ul_item",
     "named": true,
     "fields": {},
@@ -750,7 +2362,15 @@
           "named": true
         },
         {
+          "type": "center",
+          "named": true
+        },
+        {
           "type": "emph",
+          "named": true
+        },
+        {
+          "type": "escape_sequence",
           "named": true
         },
         {
@@ -762,11 +2382,19 @@
           "named": true
         },
         {
+          "type": "left",
+          "named": true
+        },
+        {
           "type": "link",
           "named": true
         },
         {
           "type": "math_inline",
+          "named": true
+        },
+        {
+          "type": "media",
           "named": true
         },
         {
@@ -778,11 +2406,27 @@
           "named": true
         },
         {
+          "type": "right",
+          "named": true
+        },
+        {
+          "type": "subscript",
+          "named": true
+        },
+        {
+          "type": "superscript",
+          "named": true
+        },
+        {
           "type": "tagged_ol",
           "named": true
         },
         {
           "type": "tagged_ul",
+          "named": true
+        },
+        {
+          "type": "target_specific",
           "named": true
         },
         {
@@ -813,7 +2457,27 @@
     }
   },
   {
+    "type": "version_tag",
+    "named": true,
+    "fields": {
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "tag_text",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "!",
+    "named": false
+  },
+  {
+    "type": "%}",
     "named": false
   },
   {
@@ -822,6 +2486,66 @@
   },
   {
     "type": "@",
+    "named": false
+  },
+  {
+    "type": "@author",
+    "named": false
+  },
+  {
+    "type": "@before",
+    "named": false
+  },
+  {
+    "type": "@canonical",
+    "named": false
+  },
+  {
+    "type": "@closed",
+    "named": false
+  },
+  {
+    "type": "@deprecated",
+    "named": false
+  },
+  {
+    "type": "@inline",
+    "named": false
+  },
+  {
+    "type": "@open",
+    "named": false
+  },
+  {
+    "type": "@param",
+    "named": false
+  },
+  {
+    "type": "@raise",
+    "named": false
+  },
+  {
+    "type": "@raises",
+    "named": false
+  },
+  {
+    "type": "@return",
+    "named": false
+  },
+  {
+    "type": "@returns",
+    "named": false
+  },
+  {
+    "type": "@see",
+    "named": false
+  },
+  {
+    "type": "@since",
+    "named": false
+  },
+  {
+    "type": "@version",
     "named": false
   },
   {
@@ -841,11 +2565,19 @@
     "named": true
   },
   {
-    "type": "code_language",
+    "type": "escape_sequence",
+    "named": true
+  },
+  {
+    "type": "heading_label",
     "named": true
   },
   {
     "type": "heading_level",
+    "named": true
+  },
+  {
+    "type": "indexlist_directive",
     "named": true
   },
   {
@@ -858,6 +2590,18 @@
   },
   {
     "type": "ol_number",
+    "named": true
+  },
+  {
+    "type": "param_name",
+    "named": true
+  },
+  {
+    "type": "tag_text",
+    "named": true
+  },
+  {
+    "type": "target_content",
     "named": true
   },
   {
@@ -881,11 +2625,47 @@
     "named": false
   },
   {
+    "type": "{!modules:",
+    "named": false
+  },
+  {
+    "type": "{%",
+    "named": false
+  },
+  {
     "type": "{-",
     "named": false
   },
   {
+    "type": "{C",
+    "named": false
+  },
+  {
+    "type": "{L",
+    "named": false
+  },
+  {
+    "type": "{R",
+    "named": false
+  },
+  {
     "type": "{[",
+    "named": false
+  },
+  {
+    "type": "{^",
+    "named": false
+  },
+  {
+    "type": "{_",
+    "named": false
+  },
+  {
+    "type": "{audio!",
+    "named": false
+  },
+  {
+    "type": "{audio:",
     "named": false
   },
   {
@@ -898,6 +2678,18 @@
   },
   {
     "type": "{i",
+    "named": false
+  },
+  {
+    "type": "{image!",
+    "named": false
+  },
+  {
+    "type": "{image:",
+    "named": false
+  },
+  {
+    "type": "{li",
     "named": false
   },
   {
@@ -918,6 +2710,38 @@
   },
   {
     "type": "{v",
+    "named": false
+  },
+  {
+    "type": "{video!",
+    "named": false
+  },
+  {
+    "type": "{video:",
+    "named": false
+  },
+  {
+    "type": "{{audio!",
+    "named": false
+  },
+  {
+    "type": "{{audio:",
+    "named": false
+  },
+  {
+    "type": "{{image!",
+    "named": false
+  },
+  {
+    "type": "{{image:",
+    "named": false
+  },
+  {
+    "type": "{{video!",
+    "named": false
+  },
+  {
+    "type": "{{video:",
     "named": false
   },
   {

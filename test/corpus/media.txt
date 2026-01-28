@@ -1,105 +1,103 @@
 ================================================================================
-Tagged unordered list
+Simple image with colon
 ================================================================================
 
-{ul {- item one} {- item two}}
+{image:path/to/img.png}
 
 --------------------------------------------------------------------------------
 
 (document
   (paragraph
-    (tagged_ul
-      (list_item
-        (word)
-        (word))
-      (list_item
-        (word)
-        (word)))))
+    (media
+      (media_simple
+        source: (media_source)))))
 
 ================================================================================
-Tagged ordered list
+Simple image with bang
 ================================================================================
 
-{ol {- first} {- second}}
+{image!path/to/img.png}
 
 --------------------------------------------------------------------------------
 
 (document
   (paragraph
-    (tagged_ol
-      (list_item
-        (word))
-      (list_item
-        (word)))))
+    (media
+      (media_simple
+        source: (media_source)))))
 
 ================================================================================
-Tagged list with inline markup
+Simple video
 ================================================================================
 
-{ul {- {b bold} item} {- item with [code]}}
+{video:path/to/video.mp4}
 
 --------------------------------------------------------------------------------
 
 (document
   (paragraph
-    (tagged_ul
-      (list_item
-        (bold
-          content: (word))
-        (word))
-      (list_item
-        (word)
-        (word)
-        (inline_code
-          (inline_code_content))))))
+    (media
+      (media_simple
+        source: (media_source)))))
 
 ================================================================================
-Nested tagged lists
+Simple audio
 ================================================================================
 
-{ul {- outer {ul {- inner}}}}
+{audio:path/to/audio.ogg}
 
 --------------------------------------------------------------------------------
 
 (document
   (paragraph
-    (tagged_ul
-      (list_item
-        (word)
-        (tagged_ul
-          (list_item
-            (word)))))))
+    (media
+      (media_simple
+        source: (media_source)))))
 
 ================================================================================
-List item with {li variant
+Image with alt text
 ================================================================================
 
-{ul {li item one} {li item two}}
+{{image:path/to/img.png} alt text}
 
 --------------------------------------------------------------------------------
 
 (document
   (paragraph
-    (tagged_ul
-      (list_item
-        (word)
-        (word))
-      (list_item
-        (word)
-        (word)))))
+    (media
+      (media_with_text
+        source: (media_source)
+        text: (word)
+        text: (word)))))
 
 ================================================================================
-Mixed {- and {li items
+Video with alt text
 ================================================================================
 
-{ul {- first} {li second}}
+{{video:vid.mp4} a video}
 
 --------------------------------------------------------------------------------
 
 (document
   (paragraph
-    (tagged_ul
-      (list_item
-        (word))
-      (list_item
-        (word)))))
+    (media
+      (media_with_text
+        source: (media_source)
+        text: (word)
+        text: (word)))))
+
+================================================================================
+Audio with bang and alt text
+================================================================================
+
+{{audio!song.ogg} my song}
+
+--------------------------------------------------------------------------------
+
+(document
+  (paragraph
+    (media
+      (media_with_text
+        source: (media_source)
+        text: (word)
+        text: (word)))))

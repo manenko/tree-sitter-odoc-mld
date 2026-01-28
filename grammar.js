@@ -11,11 +11,14 @@ module.exports = grammar({
   extras: () => [/[ \t]/],
 
   conflicts: ($) => [
-    [$.paragraph],
     [$.ul_item],
     [$.ol_item],
-    [$.ul_item, $.paragraph],
-    [$.ol_item, $.paragraph],
+    [$.deprecated_tag],
+    [$.return_tag],
+    [$.param_tag],
+    [$.raise_tag],
+    [$.before_tag],
+    [$.see_tag],
   ],
 
   rules: {
@@ -33,6 +36,9 @@ module.exports = grammar({
         $.math_block,
         $.ul_item,
         $.ol_item,
+        $.modules_directive,
+        $.indexlist_directive,
+        $.tag,
         $.paragraph,
       ),
 
@@ -40,17 +46,20 @@ module.exports = grammar({
     paragraph: ($) => prec(-1, repeat1($._inline)),
 
     // ---------------------------------------------------------------
-    // A) Headings: {0 Title} .. {4 Title}
+    // A) Headings: {0 Title} .. {4 Title}, optional label {0:label Title}
     // ---------------------------------------------------------------
     heading: ($) =>
       seq(
         "{",
         field("level", $.heading_level),
+        optional(field("label", $.heading_label)),
         field("content", $.heading_content),
         "}",
       ),
 
     heading_level: () => /[0-4]/,
+
+    heading_label: () => token(prec(1, /:[a-zA-Z0-9_-]+/)),
 
     heading_content: ($) => repeat1($._inline),
 
@@ -93,8 +102,8 @@ module.exports = grammar({
     inline_code_content: () => /[^\]\n]+/,
 
     // ---------------------------------------------------------------
-    // E) Inline markup: {b ...} {i ...} {e ...}
-    //    These may nest arbitrarily.
+    // E) Inline markup: {b ...} {i ...} {e ...} {^ ...} {_ ...}
+    //    {C ...} {L ...} {R ...}
     // ---------------------------------------------------------------
     bold: ($) =>
       seq("{b", field("content", repeat1($._inline)), "}"),
@@ -104,6 +113,21 @@ module.exports = grammar({
 
     emph: ($) =>
       seq("{e", field("content", repeat1($._inline)), "}"),
+
+    superscript: ($) =>
+      seq("{^", field("content", repeat1($._inline)), "}"),
+
+    subscript: ($) =>
+      seq("{_", field("content", repeat1($._inline)), "}"),
+
+    center: ($) =>
+      seq("{C", field("content", repeat1($._inline)), "}"),
+
+    left: ($) =>
+      seq("{L", field("content", repeat1($._inline)), "}"),
+
+    right: ($) =>
+      seq("{R", field("content", repeat1($._inline)), "}"),
 
     // ---------------------------------------------------------------
     // F) References: {!id} and {{!id} display text}
@@ -161,7 +185,10 @@ module.exports = grammar({
       seq("{ol", repeat1($.list_item), "}"),
 
     list_item: ($) =>
-      seq("{-", repeat1($._inline), "}"),
+      choice(
+        seq("{-", repeat1($._inline), "}"),
+        seq("{li", repeat1($._inline), "}"),
+      ),
 
     // ---------------------------------------------------------------
     // H) Math: {math ... } and {m ...}
@@ -177,6 +204,93 @@ module.exports = grammar({
     math_content: () => /([^{}\r\n]|\{[^}]*\}|\r?\n)+/,
 
     // ---------------------------------------------------------------
+    // I) Escape sequences: \{ \} \[ \] \@
+    // ---------------------------------------------------------------
+    escape_sequence: () => token(prec(1, /\\[{}\[\]@]/)),
+
+    // ---------------------------------------------------------------
+    // J) Target-specific content: {% string %} and {%target: string %}
+    // ---------------------------------------------------------------
+    target_specific: ($) =>
+      seq(
+        "{%",
+        optional(seq(field("target", $.target_name), ":")),
+        field("content", $.target_content),
+        "%}",
+      ),
+
+    target_name: () => /[a-zA-Z][a-zA-Z0-9_-]*/,
+    target_content: () => token(prec(-1, /([^%]|%[^}]|\r?\n)+/)),
+
+    // ---------------------------------------------------------------
+    // K) Directives: {!modules: ...} and {!indexlist}
+    // ---------------------------------------------------------------
+    modules_directive: ($) =>
+      seq("{!modules:", field("modules", repeat1($.module_name)), "}"),
+
+    module_name: () => /[A-Za-z_][A-Za-z0-9_.']*/,
+
+    indexlist_directive: () => "{!indexlist}",
+
+    // ---------------------------------------------------------------
+    // L) Media elements: {image:path}, {video:path}, {audio:path}
+    //    and with text: {{image:path} alt text}
+    // ---------------------------------------------------------------
+    media: ($) => choice($.media_simple, $.media_with_text),
+
+    media_simple: ($) =>
+      choice(
+        seq("{image:", field("source", $.media_source), "}"),
+        seq("{image!", field("source", $.media_source), "}"),
+        seq("{video:", field("source", $.media_source), "}"),
+        seq("{video!", field("source", $.media_source), "}"),
+        seq("{audio:", field("source", $.media_source), "}"),
+        seq("{audio!", field("source", $.media_source), "}"),
+      ),
+
+    media_with_text: ($) =>
+      choice(
+        seq("{{image:", field("source", $.media_source), "}", field("text", repeat1($._inline)), "}"),
+        seq("{{image!", field("source", $.media_source), "}", field("text", repeat1($._inline)), "}"),
+        seq("{{video:", field("source", $.media_source), "}", field("text", repeat1($._inline)), "}"),
+        seq("{{video!", field("source", $.media_source), "}", field("text", repeat1($._inline)), "}"),
+        seq("{{audio:", field("source", $.media_source), "}", field("text", repeat1($._inline)), "}"),
+        seq("{{audio!", field("source", $.media_source), "}", field("text", repeat1($._inline)), "}"),
+      ),
+
+    media_source: () => /[^}\s]+/,
+
+    // ---------------------------------------------------------------
+    // M) @-tags: documentation metadata
+    // ---------------------------------------------------------------
+    tag: ($) => choice(
+      $.author_tag, $.since_tag, $.version_tag,
+      $.deprecated_tag, $.return_tag,
+      $.param_tag, $.raise_tag, $.before_tag,
+      $.see_tag, $.hint_tag,
+    ),
+
+    author_tag: ($) => seq("@author", field("value", $.tag_text)),
+    since_tag: ($) => seq("@since", field("value", $.tag_text)),
+    version_tag: ($) => seq("@version", field("value", $.tag_text)),
+
+    deprecated_tag: ($) => seq("@deprecated", field("text", repeat1($._inline))),
+    return_tag: ($) => seq(choice("@return", "@returns"), field("text", repeat1($._inline))),
+
+    param_tag: ($) => seq("@param", field("name", $.param_name), field("text", repeat1($._inline))),
+    raise_tag: ($) => seq(choice("@raise", "@raises"), field("name", $.exception_name), field("text", repeat1($._inline))),
+    before_tag: ($) => seq("@before", field("version", $.word), field("text", repeat1($._inline))),
+
+    see_tag: ($) => seq("@see", field("ref", $.see_ref), field("text", repeat1($._inline))),
+    see_ref: () => choice(/<[^>]+>/, /'[^']+'/, /"[^"]+"/),
+
+    hint_tag: () => choice("@open", "@closed", "@inline", "@canonical"),
+
+    tag_text: () => /[^\r\n]+/,
+    param_name: () => /[a-zA-Z_][a-zA-Z0-9_']*/,
+    exception_name: () => /[A-Za-z_][A-Za-z0-9_.']*/,
+
+    // ---------------------------------------------------------------
     // Inline elements
     // ---------------------------------------------------------------
     _inline: ($) =>
@@ -184,6 +298,11 @@ module.exports = grammar({
         $.bold,
         $.italic,
         $.emph,
+        $.superscript,
+        $.subscript,
+        $.center,
+        $.left,
+        $.right,
         $.inline_code,
         $.ref,
         $.ref_with_text,
@@ -191,10 +310,13 @@ module.exports = grammar({
         $.math_inline,
         $.tagged_ul,
         $.tagged_ol,
+        $.escape_sequence,
+        $.target_specific,
+        $.media,
         $.word,
       ),
 
     // Plain text — anything not a special delimiter or newline
-    word: () => /[^\s{}\[\]]+/,
+    word: () => /[^\s{}\[\]\\@]+/,
   },
 });

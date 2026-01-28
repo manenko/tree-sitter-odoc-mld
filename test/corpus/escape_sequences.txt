@@ -1,79 +1,73 @@
 ================================================================================
-Heading level 0
+Escape left brace
 ================================================================================
 
-{0 My library}
+\{
 
 --------------------------------------------------------------------------------
 
 (document
-  (heading
-    level: (heading_level)
-    content: (heading_content
-      (word)
-      (word))))
+  (paragraph
+    (escape_sequence)))
 
 ================================================================================
-Heading level 1
+Escape right brace
 ================================================================================
 
-{1 Overview}
+\}
 
 --------------------------------------------------------------------------------
 
 (document
-  (heading
-    level: (heading_level)
-    content: (heading_content
-      (word))))
+  (paragraph
+    (escape_sequence)))
 
 ================================================================================
-Heading with inline markup
+Escape left bracket
 ================================================================================
 
-{2 The {b important} API}
+\[
 
 --------------------------------------------------------------------------------
 
 (document
-  (heading
-    level: (heading_level)
-    content: (heading_content
-      (word)
-      (bold
-        content: (word))
-      (word))))
+  (paragraph
+    (escape_sequence)))
 
 ================================================================================
-Heading with label
+Escape right bracket
 ================================================================================
 
-{0:my-label My library}
+\]
 
 --------------------------------------------------------------------------------
 
 (document
-  (heading
-    level: (heading_level)
-    label: (heading_label)
-    content: (heading_content
-      (word)
-      (word))))
+  (paragraph
+    (escape_sequence)))
 
 ================================================================================
-Heading with label and markup
+Escape at sign
 ================================================================================
 
-{2:api-ref The {b API} reference}
+\@
 
 --------------------------------------------------------------------------------
 
 (document
-  (heading
-    level: (heading_level)
-    label: (heading_label)
-    content: (heading_content
-      (word)
-      (bold
-        content: (word))
-      (word))))
+  (paragraph
+    (escape_sequence)))
+
+================================================================================
+Escape in text
+================================================================================
+
+hello \{ world
+
+--------------------------------------------------------------------------------
+
+(document
+  (paragraph
+    (word)
+    (escape_sequence)
+    (word)))

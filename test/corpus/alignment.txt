@@ -1,79 +1,56 @@
 ================================================================================
-Heading level 0
+Center aligned text
 ================================================================================
 
-{0 My library}
+{C centered text}
 
 --------------------------------------------------------------------------------
 
 (document
-  (heading
-    level: (heading_level)
-    content: (heading_content
-      (word)
-      (word))))
+  (paragraph
+    (center
+      content: (word)
+      content: (word))))
 
 ================================================================================
-Heading level 1
+Left aligned text
 ================================================================================
 
-{1 Overview}
+{L left text}
 
 --------------------------------------------------------------------------------
 
 (document
-  (heading
-    level: (heading_level)
-    content: (heading_content
-      (word))))
+  (paragraph
+    (left
+      content: (word)
+      content: (word))))
 
 ================================================================================
-Heading with inline markup
+Right aligned text
 ================================================================================
 
-{2 The {b important} API}
+{R right text}
 
 --------------------------------------------------------------------------------
 
 (document
-  (heading
-    level: (heading_level)
-    content: (heading_content
-      (word)
-      (bold
+  (paragraph
+    (right
+      content: (word)
+      content: (word))))
+
+================================================================================
+Alignment with inline markup
+================================================================================
+
+{C {b bold} text}
+
+--------------------------------------------------------------------------------
+
+(document
+  (paragraph
+    (center
+      content: (bold
         content: (word))
-      (word))))
-
-================================================================================
-Heading with label
-================================================================================
-
-{0:my-label My library}
-
---------------------------------------------------------------------------------
-
-(document
-  (heading
-    level: (heading_level)
-    label: (heading_label)
-    content: (heading_content
-      (word)
-      (word))))
-
-================================================================================
-Heading with label and markup
-================================================================================
-
-{2:api-ref The {b API} reference}
-
---------------------------------------------------------------------------------
-
-(document
-  (heading
-    level: (heading_level)
-    label: (heading_label)
-    content: (heading_content
-      (word)
-      (bold
-        content: (word))
-      (word))))
+      content: (word))))
