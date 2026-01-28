@@ -9,6 +9,7 @@ This grammar was implemented entirely by [Claude](https://claude.ai/) (Anthropic
 | Construct | Syntax | Node type |
 |-----------|--------|-----------|
 | Headings | `{0 Title}` .. `{4 Title}` | `heading` |
+| Labeled headings | `{0:label Title}` | `heading` |
 | Code blocks | `{[ ... ]}` | `code_block` |
 | Tagged code blocks | `{@lang[ ... ]}` | `tagged_code_block` |
 | Verbatim | `{v ... v}` | `verbatim_block` |
@@ -16,6 +17,11 @@ This grammar was implemented entirely by [Claude](https://claude.ai/) (Anthropic
 | Bold | `{b ...}` | `bold` |
 | Italic | `{i ...}` | `italic` |
 | Emphasis | `{e ...}` | `emph` |
+| Superscript | `{^ ...}` | `superscript` |
+| Subscript | `{_ ...}` | `subscript` |
+| Center alignment | `{C ...}` | `center` |
+| Left alignment | `{L ...}` | `left` |
+| Right alignment | `{R ...}` | `right` |
 | Reference | `{!id}` | `ref` |
 | Ref with text | `{{!id} text}` | `ref_with_text` |
 | Link | `{{: url} text}` | `link` |
@@ -23,8 +29,25 @@ This grammar was implemented entirely by [Claude](https://claude.ai/) (Anthropic
 | Ordered list | `1. item` | `ol_item` |
 | Tagged unordered list | `{ul {- item} ...}` | `tagged_ul` |
 | Tagged ordered list | `{ol {- item} ...}` | `tagged_ol` |
+| List item (alt) | `{li item}` | `list_item` |
 | Block math | `{math ...}` | `math_block` |
 | Inline math | `{m ...}` | `math_inline` |
+| Escape sequences | `\{` `\}` `\[` `\]` `\@` | `escape_sequence` |
+| Target-specific | `{% ... %}` `{%html: ... %}` | `target_specific` |
+| Modules directive | `{!modules: Foo Bar}` | `modules_directive` |
+| Index list | `{!indexlist}` | `indexlist_directive` |
+| Media (simple) | `{image:path}` `{video:path}` `{audio:path}` | `media_simple` |
+| Media (with text) | `{{image:path} alt}` | `media_with_text` |
+| `@author` | `@author Name` | `author_tag` |
+| `@since` | `@since 1.0` | `since_tag` |
+| `@version` | `@version 2.0` | `version_tag` |
+| `@deprecated` | `@deprecated Use X instead` | `deprecated_tag` |
+| `@return` / `@returns` | `@return the result` | `return_tag` |
+| `@param` | `@param x the value` | `param_tag` |
+| `@raise` / `@raises` | `@raise Not_found when ...` | `raise_tag` |
+| `@before` | `@before 1.0 old behavior` | `before_tag` |
+| `@see` | `@see <url>` `@see 'file'` `@see "doc"` | `see_tag` |
+| Hints | `@open` `@closed` `@inline` `@canonical` | `hint_tag` |
 
 ## Highlighting
 
@@ -39,9 +62,10 @@ All constructs have consistent delimiter highlighting that matches their content
 ## Example input
 
 ```
-{0 My library}
+{0:my-lib My library}
 
 This library provides {b fast} and {i safe} primitives.
+Water is H{_ 2}O. This is x{^ 2}.
 
 {1 Overview}
 
@@ -60,12 +84,27 @@ See {!Map} and {{!List.map} map} for details.
 Visit {{: https://ocaml.org} the OCaml website}.
 
 {ul {- First item with {b bold}}
-    {- Second item with [inline code]}}
+    {- Second item with [inline code]}
+    {li Third item using li syntax}}
 
 1. Ordered item
 2. Another with {i emphasis}
 
 {m a^2 + b^2 = c^2}
+
+Use \{ and \} for literal braces.
+
+{%html: <div class="note">A note</div> %}
+
+{image:logo.png}
+{{image:banner.png} Site banner}
+
+{!modules: Foo Bar Baz}
+
+@param x the input value
+@return the computed result
+@since 1.0
+@raise Not_found when the key is missing
 ```
 
 ## Build
