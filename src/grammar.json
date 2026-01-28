@@ -5,18 +5,30 @@
     "document": {
       "type": "REPEAT",
       "content": {
-        "type": "CHOICE",
-        "members": [
-          {
-            "type": "SYMBOL",
-            "name": "_block"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "_newline"
-          }
-        ]
+        "type": "SYMBOL",
+        "name": "_block_line"
       }
+    },
+    "_block_line": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_block"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_newline"
+        }
+      ]
     },
     "_newline": {
       "type": "PATTERN",
@@ -717,7 +729,11 @@
           "members": [
             {
               "type": "STRING",
-              "value": "{-"
+              "value": "{"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "list_dash"
             },
             {
               "type": "REPEAT1",
@@ -753,6 +769,13 @@
           ]
         }
       ]
+    },
+    "list_dash": {
+      "type": "IMMEDIATE_TOKEN",
+      "content": {
+        "type": "STRING",
+        "value": "-"
+      }
     },
     "math_block": {
       "type": "SEQ",
@@ -1689,32 +1712,7 @@
       "value": "[ \\t]"
     }
   ],
-  "conflicts": [
-    [
-      "ul_item"
-    ],
-    [
-      "ol_item"
-    ],
-    [
-      "deprecated_tag"
-    ],
-    [
-      "return_tag"
-    ],
-    [
-      "param_tag"
-    ],
-    [
-      "raise_tag"
-    ],
-    [
-      "before_tag"
-    ],
-    [
-      "see_tag"
-    ]
-  ],
+  "conflicts": [],
   "precedences": [],
   "externals": [],
   "inline": [],

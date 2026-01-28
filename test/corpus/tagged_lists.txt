@@ -10,9 +10,11 @@ Tagged unordered list
   (paragraph
     (tagged_ul
       (list_item
+        (list_dash)
         (word)
         (word))
       (list_item
+        (list_dash)
         (word)
         (word)))))
 
@@ -28,8 +30,10 @@ Tagged ordered list
   (paragraph
     (tagged_ol
       (list_item
+        (list_dash)
         (word))
       (list_item
+        (list_dash)
         (word)))))
 
 ================================================================================
@@ -44,10 +48,12 @@ Tagged list with inline markup
   (paragraph
     (tagged_ul
       (list_item
+        (list_dash)
         (bold
           content: (word))
         (word))
       (list_item
+        (list_dash)
         (word)
         (word)
         (inline_code
@@ -65,9 +71,11 @@ Nested tagged lists
   (paragraph
     (tagged_ul
       (list_item
+        (list_dash)
         (word)
         (tagged_ul
           (list_item
+            (list_dash)
             (word)))))))
 
 ================================================================================
@@ -100,6 +108,7 @@ Mixed {- and {li items
   (paragraph
     (tagged_ul
       (list_item
+        (list_dash)
         (word))
       (list_item
         (word)))))

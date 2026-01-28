@@ -10,20 +10,15 @@ module.exports = grammar({
   // Only horizontal whitespace is automatic; newlines are explicit
   extras: () => [/[ \t]/],
 
-  conflicts: ($) => [
-    [$.ul_item],
-    [$.ol_item],
-    [$.deprecated_tag],
-    [$.return_tag],
-    [$.param_tag],
-    [$.raise_tag],
-    [$.before_tag],
-    [$.see_tag],
-  ],
+  conflicts: () => [],
 
   rules: {
-    // Top-level document: sequence of blocks separated by newlines
-    document: ($) => repeat(choice($._block, $._newline)),
+    // Top-level document: blocks separated by newlines
+    document: ($) =>
+      repeat($._block_line),
+
+    _block_line: ($) =>
+      seq(optional($._block), $._newline),
 
     _newline: () => /\r?\n/,
 
@@ -186,9 +181,11 @@ module.exports = grammar({
 
     list_item: ($) =>
       choice(
-        seq("{-", repeat1($._inline), "}"),
+        seq("{", $.list_dash, repeat1($._inline), "}"),
         seq("{li", repeat1($._inline), "}"),
       ),
+
+    list_dash: () => token.immediate("-"),
 
     // ---------------------------------------------------------------
     // H) Math: {math ... } and {m ...}

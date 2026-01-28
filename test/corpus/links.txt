@@ -44,6 +44,7 @@ Link inside a list item
   (paragraph
     (tagged_ul
       (list_item
+        (list_dash)
         (word)
         (link
           url: (link_url)

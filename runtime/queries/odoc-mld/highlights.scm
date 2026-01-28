@@ -114,7 +114,8 @@
   "{ol" @punctuation.bracket
   "}" @punctuation.bracket)
 (list_item
-  "{-" @punctuation.bracket
+  "{" @punctuation.bracket
+  (list_dash) @markup.list.unnumbered
   "}" @punctuation.bracket)
 (list_item
   "{li" @punctuation.bracket

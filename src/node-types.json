@@ -1010,6 +1010,10 @@
           "named": true
         },
         {
+          "type": "list_dash",
+          "named": true
+        },
+        {
           "type": "math_inline",
           "named": true
         },
@@ -2585,6 +2589,10 @@
     "named": true
   },
   {
+    "type": "list_dash",
+    "named": true
+  },
+  {
     "type": "math_content",
     "named": true
   },
@@ -2630,10 +2638,6 @@
   },
   {
     "type": "{%",
-    "named": false
-  },
-  {
-    "type": "{-",
     "named": false
   },
   {
