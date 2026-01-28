@@ -38,21 +38,21 @@
   "{b" @markup.bold
   "}" @markup.bold)
 (bold
-  content: (_) @markup.bold)
+  content: (_)+ @markup.bold)
 
 ; Italic
 (italic
   "{i" @markup.italic
   "}" @markup.italic)
 (italic
-  content: (_) @markup.italic)
+  content: (_)+ @markup.italic)
 
 ; Emphasis
 (emph
   "{e" @markup.italic
   "}" @markup.italic)
 (emph
-  content: (_) @markup.italic)
+  content: (_)+ @markup.italic)
 
 ; References
 (ref
@@ -68,7 +68,7 @@
   "{" @markup.link
   "}" @markup.link)
 (ref_with_text
-  text: (_) @markup.link.text)
+  text: (_)+ @markup.link.text)
 
 ; Lists — plain
 (ul_bullet) @markup.list.unnumbered
